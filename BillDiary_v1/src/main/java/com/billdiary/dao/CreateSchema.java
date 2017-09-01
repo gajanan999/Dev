@@ -21,8 +21,8 @@ public class CreateSchema {
 		boolean dbCreated=false;
 		Class.forName(Constants.DB_DRIVER);
 		Connection connection = DriverManager.getConnection(Constants.DB_URL,Constants.DB_USERNAME,Constants.DB_PASSWORD);
-		//connection.createStatement().executeQuery("drop table user");
-		connection.createStatement().executeQuery("create table if not exists user(id int, username varchar(20),password varchar(20),role varchar(20))");
+		connection.createStatement().executeQuery("drop table user");
+		connection.createStatement().executeQuery("create table if not exists user(id int, username varchar(20),password varchar(20),role varchar(20),primary key(id))");
 		
 		connection.createStatement().executeQuery("insert into user values(1,'gajanan','gajanan','admin')");
 		 PreparedStatement st = connection.prepareStatement("select * from user");
