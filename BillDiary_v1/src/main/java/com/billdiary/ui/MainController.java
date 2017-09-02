@@ -1,10 +1,17 @@
 package com.billdiary.ui;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.support.GenericApplicationContext;
 
+import com.billdiary.config.SpringContext;
+import com.billdiary.config.SpringFxmlLoader;
 import com.billdiary.dao.CreateSchema;
+
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,17 +21,21 @@ import javafx.stage.Stage;
 public class MainController extends Application{
 	
 	final static Logger LOGGER = Logger.getLogger(MainController.class);
+	
+	private static final SpringFxmlLoader loader = new SpringFxmlLoader();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		LOGGER.debug("Entering Class MainController : method : main.");
-		try {
-			CreateSchema.CreateDatabase();
-
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		/**
+		 * Configuration of Spring 
+		 */
+		
+		//GenericApplicationContext ctx = SpringContext.getContext();
+		//BeanFactory factory = ctx;
+		
+	//	System.out.println(Arrays.asList(ctx.getBeanDefinitionNames()));
+		
 		launch(args); 
 		
 	}
@@ -45,9 +56,21 @@ public class MainController extends Application{
 	      //Displaying the contents of the stage 
 	      stage.show(); 
 	      */
-		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/Login.fxml"));
+		/*Below fxml file will be loaded by SpringFxmlLoader */
+		try {
+			CreateSchema.CreateDatabase();
+
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Parent root = (Parent) loader.load("/fxml/Login.fxml");
+		
+		
+		//Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/Login.fxml"));
 	    
-        Scene scene = new Scene(root, 600, 600);
+        Scene scene = new Scene(root, 800, 600);
+       
     
         stage.setTitle("Welcome to Application");
         stage.setScene(scene);

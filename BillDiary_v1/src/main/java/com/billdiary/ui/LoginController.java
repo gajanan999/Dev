@@ -1,52 +1,68 @@
 package com.billdiary.ui;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jmx.export.annotation.ManagedAttribute;
+import org.springframework.stereotype.Controller;
 
 import com.billdiary.model.User;
 import com.billdiary.service.LoginService;
-import com.billdiary.utility.Constants;
+
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
 
+@Controller("LoginController")
 public class LoginController {
 	
 	final static Logger LOGGER = Logger.getLogger(LoginController.class);
 	
+	// Reference to the main application
+    @SuppressWarnings("unused")
+    private MainController mainController;
+	
+	
+	public void setMainController(MainController mainController) {
+		this.mainController = mainController;
+	}
+
+	@Autowired
 	private LoginService loginService;
+	
+	
+	
+	@Autowired
 	private User user;
 	
 	@FXML private Text actiontarget;
 	@FXML private TextField textField;
 	@FXML private PasswordField passwordField;
 	
+	
+	
+	public LoginController()
+	{
+		
+	}
     
     @FXML protected void handleSignInButtonAction(ActionEvent event) {
     	
     	LOGGER.debug("In method LoginController:handleSignInButtonAction Entry ");
     	
-    	loginService=new LoginService();
-    	user=new User();
+    	
+    	
     	String userName=textField.getText();
     	String password=passwordField.getText();
+    	System.out.println("dffsdfds");
     	if(userName!=null && password!=null)
     	{
+    		System.out.println("dfdsfd");
     		user.setUserName(userName);
     		user.setPassword(password);
     		if(loginService.doLogin(user))

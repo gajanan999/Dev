@@ -6,7 +6,8 @@ root {
    -fx-padding: 10 10 10 10;
 }
 .root {
--fx-background-image: url("/images/background.jpg");
+
+-fx-background-color:   #f8f9f9;
 }
 .label {
     -fx-font-size: 12px;

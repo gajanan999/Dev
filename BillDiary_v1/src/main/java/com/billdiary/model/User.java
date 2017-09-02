@@ -1,5 +1,9 @@
 package com.billdiary.model;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 	
 	private String id;
@@ -7,6 +11,10 @@ public class User {
 	private String password;
 	private String role;
 	
+	public User()
+	{
+		
+	}
 	
 	public String getId() {
 		return id;

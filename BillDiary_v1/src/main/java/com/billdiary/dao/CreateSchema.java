@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
-import com.billdiary.ui.MainController;
+
 import com.billdiary.utility.Constants;
 
 public class CreateSchema {

@@ -7,10 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import com.billdiary.model.User;
 import com.billdiary.utility.Constants;
 
+
+@Repository
 public class LoginDAO {
 
 	final static Logger LOGGER = Logger.getLogger(LoginDAO.class);

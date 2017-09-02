@@ -7,7 +7,7 @@
 
 
 <GridPane fx:controller="com.billdiary.ui.LoginController" 
-    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="30" vgap="15">
     
     
     <Text id="welcome-text" text="Welcome" 
@@ -34,6 +34,8 @@
 
 	<Text fx:id="actiontarget"
        GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+       <Label text="#user.userName"
+        GridPane.columnIndex="3" GridPane.rowIndex="2"/>
         
 	<padding>
 		<Insets top="25" right="25" bottom="10" left="25"/>
