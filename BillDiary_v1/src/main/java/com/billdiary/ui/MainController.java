@@ -3,7 +3,7 @@ package com.billdiary.ui;
 import java.sql.SQLException;
 import java.util.Arrays;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.GenericApplicationContext;
 
@@ -20,13 +20,13 @@ import javafx.stage.Stage;
 
 public class MainController extends Application{
 	
-	final static Logger LOGGER = Logger.getLogger(MainController.class);
+	//final static Logger LOGGER = Logger.getLogger(MainController.class);
 	
 	private static final SpringFxmlLoader loader = new SpringFxmlLoader();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		LOGGER.debug("Entering Class MainController : method : main.");
+	//	LOGGER.debug("Entering Class MainController : method : main.");
 		/**
 		 * Configuration of Spring 
 		 */

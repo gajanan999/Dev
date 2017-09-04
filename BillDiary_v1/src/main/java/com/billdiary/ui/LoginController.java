@@ -2,7 +2,7 @@ package com.billdiary.ui;
 
 
 
-import org.apache.log4j.Logger;
+///import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ import javafx.scene.text.Text;
 @Controller("LoginController")
 public class LoginController {
 	
-	final static Logger LOGGER = Logger.getLogger(LoginController.class);
+//	final static Logger LOGGER = Logger.getLogger(LoginController.class);
 	
 	// Reference to the main application
     @SuppressWarnings("unused")
@@ -53,7 +53,7 @@ public class LoginController {
     
     @FXML protected void handleSignInButtonAction(ActionEvent event) {
     	
-    	LOGGER.debug("In method LoginController:handleSignInButtonAction Entry ");
+    //	LOGGER.debug("In method LoginController:handleSignInButtonAction Entry ");
     	
     	
     	
@@ -79,7 +79,7 @@ public class LoginController {
     		actiontarget.setText("UserName & Password cannot be valid");
     	}
     	
-    	LOGGER.debug("In method LoginController:handleSignInButtonAction Exit ");
+    	//LOGGER.debug("In method LoginController:handleSignInButtonAction Exit ");
         
     }
 	

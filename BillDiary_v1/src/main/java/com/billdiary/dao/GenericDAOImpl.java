@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 //public class GenericDAOImpl extends JpaDaoSupport implements GenericDAO
 public class GenericDAOImpl  implements GenericDAO {
@@ -15,7 +15,7 @@ public class GenericDAOImpl  implements GenericDAO {
 	/**
 	 * Holds Logger for logging purpose.
 	 */
-	private static final Logger LOGGER = Logger.getLogger(GenericDAOImpl.class);
+	//private static final Logger LOGGER = Logger.getLogger(GenericDAOImpl.class);
 
 	/**
 	 * Constant for unchecked.

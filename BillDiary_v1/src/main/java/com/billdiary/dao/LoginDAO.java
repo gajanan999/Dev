@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
 import com.billdiary.model.User;
@@ -16,19 +16,19 @@ import com.billdiary.utility.Constants;
 @Repository
 public class LoginDAO {
 
-	final static Logger LOGGER = Logger.getLogger(LoginDAO.class);
+	//final static Logger LOGGER = Logger.getLogger(LoginDAO.class);
 	
 	PreparedStatement st;
 	ResultSet r1;
 	Connection connection;
 	public boolean doLogin(User user)
 	{
-		LOGGER.debug("In method LoginDAO:doLogin Entry ");
+	//	LOGGER.debug("In method LoginDAO:doLogin Entry ");
 		boolean userLogged=true;
 		try {
 			Class.forName(Constants.DB_DRIVER);
 			 connection = DriverManager.getConnection(Constants.DB_URL,Constants.DB_USERNAME,Constants.DB_PASSWORD);
-			 st = connection.prepareStatement("select * from user");
+			 st = connection.prepareStatement("select * from user2");
 		     r1=st.executeQuery();
 		    while(r1.next())
 			   {
@@ -53,7 +53,7 @@ public class LoginDAO {
 		}
 		
 		
-		LOGGER.debug("In method LoginDAO:doLogin Exit ");
+		//LOGGER.debug("In method LoginDAO:doLogin Exit ");
 		return userLogged;
 		
 	}
