@@ -1,8 +1,10 @@
 package com.billdiary.ui;
 
-
-
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
+//import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.stereotype.Controller;
@@ -21,7 +23,8 @@ import javafx.scene.text.Text;
 @Controller("LoginController")
 public class LoginController {
 	
-	final static Logger LOGGER = Logger.getLogger(LoginController.class);
+	//final static Log LOGGER = LogFactory.getLog(LoginController.class);
+	final static Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 	
 	// Reference to the main application
     @SuppressWarnings("unused")

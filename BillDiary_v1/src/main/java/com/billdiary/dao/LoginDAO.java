@@ -6,7 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.apache.log4j.Logger;
+
+
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+//import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
 import com.billdiary.model.User;
@@ -16,8 +22,8 @@ import com.billdiary.utility.Constants;
 @Repository
 public class LoginDAO {
 
-	final static Logger LOGGER = Logger.getLogger(LoginDAO.class);
-	
+	//final static Log LOGGER = LogFactory.getLog(LoginDAO.class);
+	final static Logger LOGGER = LoggerFactory.getLogger(CreateSchema.class);
 	PreparedStatement st;
 	ResultSet r1;
 	Connection connection;
@@ -25,6 +31,7 @@ public class LoginDAO {
 	{
 		LOGGER.debug("In method LoginDAO:doLogin Entry ");
 		boolean userLogged=true;
+		/*
 		try {
 			Class.forName(Constants.DB_DRIVER);
 			 connection = DriverManager.getConnection(Constants.DB_URL,Constants.DB_USERNAME,Constants.DB_PASSWORD);
@@ -52,7 +59,7 @@ public class LoginDAO {
 			
 		}
 		
-		
+		*/
 		LOGGER.debug("In method LoginDAO:doLogin Exit ");
 		return userLogged;
 		

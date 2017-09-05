@@ -1,26 +1,28 @@
 package com.billdiary.ui;
 
 import java.sql.SQLException;
-import java.util.Arrays;
 
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.support.GenericApplicationContext;
 
-import com.billdiary.config.SpringContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+//import org.apache.log4j.Logger;
+
 import com.billdiary.config.SpringFxmlLoader;
 import com.billdiary.dao.CreateSchema;
 
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class MainController extends Application{
 	
-	final static Logger LOGGER = Logger.getLogger(MainController.class);
+	//final static Logger LOGGER = Logger.getLogger(MainController.class);
+	
+	final static Logger LOGGER = LoggerFactory.getLogger(MainController.class);
 	
 	private static final SpringFxmlLoader loader = new SpringFxmlLoader();
 

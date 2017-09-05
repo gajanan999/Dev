@@ -6,19 +6,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.apache.log4j.Logger;
-
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
+//import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.billdiary.utility.Constants;
 
 public class CreateSchema {
 	
-	final static Logger LOGGER = Logger.getLogger(CreateSchema.class);
+	final static Logger LOGGER = LoggerFactory.getLogger(CreateSchema.class);
+	//final static Log LOGGER = LogFactory.getLog(CreateSchema.class);
 	
 	public static boolean CreateDatabase() throws ClassNotFoundException, SQLException
 	{
 		LOGGER.debug("Entering Class CreateSchema : method : CreateDatabase.");
 		boolean dbCreated=false;
+		/*
 		Class.forName(Constants.DB_DRIVER);
 		Connection connection = DriverManager.getConnection(Constants.DB_URL,Constants.DB_USERNAME,Constants.DB_PASSWORD);
 		connection.createStatement().executeQuery("drop table user");
@@ -37,7 +42,7 @@ public class CreateSchema {
 		st.close();
 		
 		connection.close();
-		
+		*/
 		System.out.println("Tables created successfully.. and record inserted successfully");
 		
 		return dbCreated;
