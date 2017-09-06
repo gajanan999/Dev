@@ -23,6 +23,10 @@ public class MainController extends Application{
 	//final static Logger LOGGER = Logger.getLogger(MainController.class);
 	
 	private static final SpringFxmlLoader loader = new SpringFxmlLoader();
+	
+	public static SpringFxmlLoader getLoader() {
+		return loader;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

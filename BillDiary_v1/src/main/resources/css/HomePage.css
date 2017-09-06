@@ -1,0 +1,10 @@
+root { 
+    display: block;
+   -fx-border-color: #BFC9CA;
+   -fx-background-radius: 20;
+   -fx-border-radius: 20;
+   -fx-padding: 10 10 10 10;
+}
+.root {
+-fx-background-color:   #f8f9f9;
+}

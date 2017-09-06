@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.billdiary.ui.HomeController">
+   <top>
+      <HBox prefHeight="21.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="page1" mnemonicParsing="false" onAction="#Openpage1" text="page1" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#Openpage2" text="page2" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" onAction="#initialize" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Region prefHeight="100.0" prefWidth="292.0" HBox.hgrow="ALWAYS" />
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="GST info">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="About">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Logout">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+         <opaqueInsets>
+            <Insets top="2.0" />
+         </opaqueInsets>
+      </HBox>
+   </top>
+   <left>
+   
+   </left>
+   <center>
+      <TableView fx:id="tbid" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn id="id" fx:id="id" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="name" prefWidth="121.0" text="name" />
+            <TableColumn fx:id="price" prefWidth="143.0" text="price" />
+        </columns>
+      </TableView>
+   </center>
+   <right>
+   
+   
+   </right>
+   
+   <bottom>
+   		
+   </bottom>
+	<stylesheets>
+    	<URL value="@/css/HomePage.css" />
+    </stylesheets>
+</BorderPane>

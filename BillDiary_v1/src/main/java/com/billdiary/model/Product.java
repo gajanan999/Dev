@@ -2,35 +2,38 @@ package com.billdiary.model;
 
 import org.springframework.stereotype.Component;
 
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 @Component
 public class Product {
 	
+	private SimpleIntegerProperty id;
+	private SimpleStringProperty name;
+	private SimpleFloatProperty price;
 	public Product()
 	{
 		
 	}
-	
-	int id;
-	String name;
-	double price;
 	public int getId() {
-		return id;
+		return id.get();
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
+		return name.get();
 	}
 	
+	public double getPrice() {
+		return price.get();
+	}
+	
+	public Product(int id,String name,float price)
+	{
+
+		this.id=new SimpleIntegerProperty(id);
+		this.name=new SimpleStringProperty(name);
+		this.price=new SimpleFloatProperty(price);
+	}
 
 }

@@ -4,23 +4,37 @@ package com.billdiary.ui;
 
 ///import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.stereotype.Controller;
 
+import com.billdiary.config.SpringFxmlLoader;
 import com.billdiary.model.User;
 import com.billdiary.service.LoginService;
 
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 
 @Controller("LoginController")
 public class LoginController {
 	
+	
+	public static BorderPane root=new BorderPane();
+	
+	public static BorderPane getRoot() {
+		return root;
+	}
+
+	public void setRoot(BorderPane root) {
+		this.root = root;
+	}
 //	final static Logger LOGGER = Logger.getLogger(LoginController.class);
 	
 	// Reference to the main application
@@ -68,6 +82,15 @@ public class LoginController {
     		if(loginService.doLogin(user))
     		{
     			actiontarget.setText("Login Successfull");
+    			((Node)(event.getSource())).getScene().getWindow().hide();
+    			SpringFxmlLoader loader=mainController.getLoader();
+    			root= (BorderPane) loader.load("/fxml/Home.fxml");
+    			 Scene scene = new Scene(root,600,400);
+    		     Stage stage=new Stage();
+    			 stage.setMaximized(true);
+    		     stage.setTitle("Welcome to Homepage");
+    		       stage.setScene(scene);
+    		        stage.show();
     		}
     		else {
     			actiontarget.setText("Login failed");

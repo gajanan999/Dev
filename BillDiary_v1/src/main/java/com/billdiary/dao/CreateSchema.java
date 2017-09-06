@@ -24,7 +24,7 @@ public class CreateSchema {
 		//connection.createStatement().executeQuery("drop table user");
 		connection.createStatement().executeQuery("create table if not exists user(id int, username varchar(20),password varchar(20),role varchar(20),primary key(id))");
 		
-		connection.createStatement().executeQuery("insert into user values(1,'gajanan','gajanan','admin')");
+		//connection.createStatement().executeQuery("insert into user values(1,'gajanan','gajanan','admin')");
 		 PreparedStatement st = connection.prepareStatement("select * from user");
 		    ResultSet r1=st.executeQuery();
 		   while(r1.next())
