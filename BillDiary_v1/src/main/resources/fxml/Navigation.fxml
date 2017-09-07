@@ -2,7 +2,7 @@
 
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.billdiary.ui.NavigationController">
 	<!-- TODO Add Nodes -->
 </VBox>
 
