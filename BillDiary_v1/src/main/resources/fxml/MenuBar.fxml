@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<HBox prefHeight="21.0" prefWidth="600.0" BorderPane.alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1">
+	<!-- TODO Add Nodes -->
+	<children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="page1" mnemonicParsing="false" onAction="#Openpage1" text="page1" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#Openpage2" text="page2" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" onAction="#initialize" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Region prefHeight="100.0" prefWidth="292.0" HBox.hgrow="ALWAYS" />
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="GST info">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="About">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Logout">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+         <opaqueInsets>
+            <Insets top="2.0" />
+         </opaqueInsets>
+</HBox>
+
