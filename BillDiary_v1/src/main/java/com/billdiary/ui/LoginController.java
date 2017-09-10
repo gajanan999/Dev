@@ -10,14 +10,17 @@ import com.billdiary.config.SpringFxmlLoader;
 import com.billdiary.model.User;
 import com.billdiary.service.LoginService;
 
-
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -25,9 +28,9 @@ import javafx.stage.Stage;
 @Controller("LoginController")
 public class LoginController {
 	
-	
+	private SimpleStringProperty title;
 	public static BorderPane root=new BorderPane();
-	
+	public static StackPane root1= new StackPane();
 	public static BorderPane getRoot() {
 		return root;
 	}
@@ -82,13 +85,17 @@ public class LoginController {
     		if(loginService.doLogin(user))
     		{
     			actiontarget.setText("Login Successfull");
+    			//SpringFxmlLoader loader=mainController.getLoader();
+    			//String m=loader.getMessage("Main.Title");
+    			//title=new SimpleStringProperty(m);
     			((Node)(event.getSource())).getScene().getWindow().hide();
     			SpringFxmlLoader loader=mainController.getLoader();
-    			root= (BorderPane) loader.load("/fxml/Home.fxml");
-    			 Scene scene = new Scene(root,600,400);
+    			root1= (StackPane) loader.load("/fxml/Home.fxml");
+    			 Scene scene = new Scene(root1,600,400);
+    			 
     		     Stage stage=new Stage();
     			 stage.setMaximized(true);
-    		     stage.setTitle("Welcome to Homepage");
+    		     stage.setTitle("BillDiary version 1.0");
     		       stage.setScene(scene);
     		        stage.show();
     		}
@@ -105,7 +112,15 @@ public class LoginController {
     	//LOGGER.debug("In method LoginController:handleSignInButtonAction Exit ");
         
     }
+ 
 	
-	 
+    public void loadWindow(Parent root,String title)
+	{
+		Stage stage = new Stage();
+		Scene scene = new Scene(root, 800, 600); 
+        stage.setTitle(title);
+        stage.setScene(scene);
+        stage.show();
+	}
 	
 }

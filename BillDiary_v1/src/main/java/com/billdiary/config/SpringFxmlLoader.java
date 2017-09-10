@@ -3,9 +3,12 @@ package com.billdiary.config;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javafx.util.Callback;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -25,6 +28,7 @@ public class SpringFxmlLoader {
 			FXMLLoader loader = new FXMLLoader();
 			URL location = getClass().getResource(url);
 			loader.setLocation(location);
+			//loader.setResources(resources);
 			loader.setControllerFactory(new Callback<Class<?>, Object>() {
 				@Override
 				public Object call(Class<?> clazz) {
@@ -36,5 +40,18 @@ public class SpringFxmlLoader {
 			throw new RuntimeException(ioException);
 		}
 	}
+	
+	public static String getMessage(String key) {
+		 
+        try {
+            MessageSource bean = applicationContext.getBean(MessageSource.class);
+            
+            return bean.getMessage(key, null, Locale.getDefault());
+        }
+        catch (Exception e) {
+            return "Unresolved key: " + key;
+        }
+ 
+    }
 
 }

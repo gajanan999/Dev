@@ -2,6 +2,7 @@ package com.billdiary.ui;
 
 import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.ResourceBundle;
 
 //import org.apache.log4j.Logger;
 import org.springframework.beans.factory.BeanFactory;
@@ -68,17 +69,18 @@ public class MainController extends Application{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//ResourceBundle bundle = ResourceBundle.getBundle("resources.UIResources");
+		
 		Parent root = (Parent) loader.load("/fxml/Login.fxml");
 		
 		
 		//Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/Login.fxml"));
-	    
-        Scene scene = new Scene(root, 800, 600);
-       
-    
+		//Stage stage = new Stage();
+		Scene scene = new Scene(root, 800, 600); 
         stage.setTitle("Welcome to Application");
         stage.setScene(scene);
         stage.show();
+        
 		
 	}
 	
